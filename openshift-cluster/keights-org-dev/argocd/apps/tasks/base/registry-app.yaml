@@ -13,7 +13,7 @@ spec:
     server: https://kubernetes.default.svc
   project: cluster-config
   source:
-    path: openshift-cluster/keights-org-dev/internal-registry/base
+    path: ./openshift-cluster/keights-org-dev/internal-registry/base
     repoURL: https://github.com/salanisor/ocp-argocd.git
     targetRevision: test
   syncPolicy:
