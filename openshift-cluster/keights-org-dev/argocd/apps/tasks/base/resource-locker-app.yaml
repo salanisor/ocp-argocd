@@ -13,7 +13,7 @@ spec:
     server: https://kubernetes.default.svc
   project: cluster-config
   source:
-    path: ./openshift-cluster/keights-org-dev/resource-locker/base
+    path: ./openshift-cluster/keights-org-dev/resource-locker/base/resource-locker-operator
     repoURL: https://github.com/salanisor/ocp-argocd.git
     targetRevision: test
   syncPolicy:
