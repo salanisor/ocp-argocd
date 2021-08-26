@@ -1,9 +1,9 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: machine-config-pools
+  name: service-mesh
   annotations:
-    argocd.argoproj.io/sync-wave: "2"
+    argocd.argoproj.io/sync-wave: "5"
     argocd.argoproj.io/compare-options: IgnoreExtraneous
   labels:
     gitops.ownedBy: cluster-config
@@ -13,9 +13,9 @@ spec:
     server: https://kubernetes.default.svc
   project: cluster-config
   source:
-    path: openshift-cluster/keights-org-dev/machine-config-pools/base
-    repoURL: https://github.com/ocpdude/ocp-argocd.git
-    targetRevision: main
+    path: ./openshift-cluster/keights-org-dev/service-mesh/base
+    repoURL: https://github.com/salanisor/ocp-argocd.git
+    targetRevision: test
   syncPolicy:
     automated:
       prune: false

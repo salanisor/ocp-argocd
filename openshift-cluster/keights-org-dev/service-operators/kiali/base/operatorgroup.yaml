@@ -1,0 +1,8 @@
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  name: kiali-ossm
+  namespace: istio-system
+spec:
+  targetNamespaces:
+  - istio-system

@@ -1,0 +1,125 @@
+apiVersion: maistra.io/v2
+kind: ServiceMeshControlPlane
+metadata:
+  name: basic
+  namespace: istio-system
+  annotations:
+    argocd.argoproj.io/sync-wave: "5"
+spec:
+  proxy:
+    resources:
+      requests:
+        cpu: 100m
+        memory: 128Mi
+      limits:
+        cpu: 500m
+        memory: 128Mi
+  tracing:
+    type: Jaeger
+  gateways:
+    ingress: # istio-ingressgateway
+      service:
+        type: ClusterIP
+        ports:
+        - name: status-port
+          port: 15020
+        - name: http2
+          port: 80
+          targetPort: 8080
+        - name: https
+          port: 443
+          targetPort: 8443
+      meshExpansionPorts: []
+    egress: # istio-egressgateway
+      service:
+        type: ClusterIP
+        ports:
+        - name: status-port
+          port: 15020
+        - name: http2
+          port: 80
+          targetPort: 8080
+        - name: https
+          port: 443
+          targetPort: 8443
+    additionalIngress:
+      some-other-ingress-gateway: {}
+    additionalEgress:
+      some-other-egress-gateway: {}
+
+  policy:
+    type: Mixer
+    mixer: # only applies if policy.type: Mixer
+      enableChecks: true
+      failOpen: false
+
+  telemetry:
+    type: Istiod # or Mixer
+    mixer: # only applies if telemetry.type: Mixer, for v1 telemetry
+      sessionAffinity: false
+      batching:
+        maxEntries: 100
+        maxTime: 1s
+      adapters:
+        kubernetesenv: true
+        stdio:
+          enabled: true
+          outputAsJSON: true
+  addons:
+    grafana:
+      enabled: true
+      install:
+        config:
+          env: {}
+          envSecrets: {}
+        service:
+          ingress:
+            contextPath: /grafana
+            tls:
+              termination: reencrypt
+    kiali:
+      name: kiali
+      enabled: true
+      install: # install kiali CR if not present
+        dashboard:
+          viewOnly: false
+          enableGrafana: true
+          enableTracing: true
+          enablePrometheus: true
+      service:
+        ingress:
+          contextPath: /kiali
+    jaeger:
+      name: jaeger
+      install:
+        storage:
+          type: Elasticsearch # or Memory
+          memory:
+            maxTraces: 100000
+          elasticsearch:
+            nodeCount: 3
+            storage: {}
+            redundancyPolicy: SingleRedundancy
+            indexCleaner: {}
+        ingress: {} # jaeger ingress configuration
+  runtime:
+    components:
+      pilot:
+        deployment:
+          replicas: 2
+        pod:
+          affinity: {}
+        container:
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 128Mi
+      grafana:
+        deployment: {}
+        pod: {}
+      kiali:
+        deployment: {}
+        pod: {}
