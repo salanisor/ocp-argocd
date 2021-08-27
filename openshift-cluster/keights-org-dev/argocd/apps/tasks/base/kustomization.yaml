@@ -3,7 +3,7 @@ kind: Kustomization
 
 resources:
   #- service-mesh-app.yaml
-  #- jaeger-operator-app.yaml
+  - jaeger-operator-app.yaml
   - kiali-operator-app.yaml
   - elastic-operator-app.yaml
   #- api-server-app.yaml
