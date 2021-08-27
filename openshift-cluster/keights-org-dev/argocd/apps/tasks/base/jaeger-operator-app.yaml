@@ -13,8 +13,8 @@ spec:
     server: https://kubernetes.default.svc
   project: cluster-config
   source:
-    path: ./openshift-cluster/keights-org-dev/service-operators/jaeger/base
-    repoURL: https://github.com/ocpdude/ocp-argocd.git
+    path: openshift-cluster/keights-org-dev/service-operators/jaeger/base
+    repoURL: https://github.com/salanisor/ocp-argocd.git
     targetRevision: test
   syncPolicy:
     automated:
