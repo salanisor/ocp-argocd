@@ -2,9 +2,9 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: controlplane-development
-  annotations:
-    argocd.argoproj.io/sync-wave: "1"
-    argocd.argoproj.io/compare-options: IgnoreExtraneous
+  #annotations:
+  #  argocd.argoproj.io/sync-wave: "1"
+  #  argocd.argoproj.io/compare-options: IgnoreExtraneous
   labels:
     gitops.ownedBy: cluster-config
 spec:
