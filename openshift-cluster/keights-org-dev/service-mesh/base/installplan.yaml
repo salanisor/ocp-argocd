@@ -1,0 +1,16 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: InstallPlan
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
+    argocd.argoproj.io/compare-options: IgnoreExtraneous
+  creationTimestamp: ""
+  generateName: install-
+  labels:
+    operators.coreos.com/servicemeshoperator.openshift-operators: ""
+  namespace: openshift-operators
+spec:
+  approval: Automatic
+  approved: true
+  clusterServiceVersionNames:
+  - servicemeshoperator.v2.0.7.1
