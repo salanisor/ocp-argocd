@@ -4,7 +4,6 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "2"
     argocd.argoproj.io/compare-options: IgnoreExtraneous
-  creationTimestamp: ""
   generateName: install-
   labels:
     operators.coreos.com/servicemeshoperator.openshift-operators: ""
