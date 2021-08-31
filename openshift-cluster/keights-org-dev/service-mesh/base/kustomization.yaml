@@ -3,4 +3,4 @@ kind: Kustomization
 
 resources:
   - servicemeshoperator-sub.yaml
-    #- servicemeshcontrolplane.yaml
+  #- servicemeshcontrolplane.yaml
