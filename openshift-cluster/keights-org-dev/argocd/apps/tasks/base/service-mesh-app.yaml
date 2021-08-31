@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: service-mesh
+  name: service-mesh-operator
   annotations:
     argocd.argoproj.io/sync-wave: "5"
     argocd.argoproj.io/compare-options: IgnoreExtraneous
