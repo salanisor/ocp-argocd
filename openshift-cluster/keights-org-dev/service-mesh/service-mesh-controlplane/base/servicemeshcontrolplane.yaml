@@ -1,8 +1,10 @@
 apiVersion: maistra.io/v2
 kind: ServiceMeshControlPlane
 metadata:
-  name: basic
+  name: development
   namespace: istio-system
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
 spec:
   proxy:
     resources:
@@ -44,13 +46,11 @@ spec:
       some-other-ingress-gateway: {}
     additionalEgress:
       some-other-egress-gateway: {}
-
   policy:
     type: Mixer
     mixer: # only applies if policy.type: Mixer
       enableChecks: true
       failOpen: false
-
   telemetry:
     type: Istiod # or Mixer
     mixer: # only applies if telemetry.type: Mixer, for v1 telemetry
