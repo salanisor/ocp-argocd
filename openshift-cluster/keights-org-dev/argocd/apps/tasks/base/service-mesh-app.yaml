@@ -13,7 +13,7 @@ spec:
     server: https://kubernetes.default.svc
   project: cluster-config
   source:
-    path: ./openshift-cluster/keights-org-dev/service-mesh/service-mesh-controlplane/development
+    path: openshift-cluster/keights-org-dev/service-mesh/service-mesh-controlplane/development
     repoURL: https://github.com/salanisor/ocp-argocd.git
     targetRevision: test
   syncPolicy:
