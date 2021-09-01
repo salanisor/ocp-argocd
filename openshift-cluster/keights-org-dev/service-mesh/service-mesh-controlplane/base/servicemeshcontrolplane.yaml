@@ -2,9 +2,9 @@ apiVersion: maistra.io/v2
 kind: ServiceMeshControlPlane
 metadata:
   name: development
-  #namespace: istio-system
-  #annotations:
-  #  argocd.argoproj.io/sync-wave: "2"
+  namespace: istio-system
+  annotations:
+    argocd.argoproj.io/sync-wave: "7"
 spec:
   proxy:
     resources:
