@@ -4,5 +4,5 @@ namespace: istio-system
 resources:
   - namespace.yaml
   - ../../base
-spec:
-  timeout: 5m
+#spec:
+#timeout: 5m
