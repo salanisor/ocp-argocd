@@ -3,4 +3,4 @@ kind: Kustomization
 namespace: istio-system
 resources:
   - namespace.yaml
-  - ./openshift-cluster/keights-org-dev/service-mesh/service-mesh-controlplane/base/servicemeshcontrolplane.yaml
+  - ../base
