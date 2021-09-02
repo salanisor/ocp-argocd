@@ -4,7 +4,5 @@ metadata:
   name: istio-system
   labels:
     openshift.io/cluster-monitoring: "true"
-  annotations:
-    argocd.argoproj.io/sync-wave: "6"
-    argocd.argoproj.io/compare-options: IgnoreExtraneous
+    argocd.argoproj.io/hook: PreSync
 spec: {}

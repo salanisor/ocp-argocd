@@ -3,8 +3,6 @@ kind: Application
 metadata:
   name: ocp-pipelines-operator
   annotations:
-    argocd.argoproj.io/sync-wave: "4"
-    argocd.argoproj.io/compare-options: IgnoreExtraneous
   labels:
     gitops.ownedBy: cluster-config
 spec:

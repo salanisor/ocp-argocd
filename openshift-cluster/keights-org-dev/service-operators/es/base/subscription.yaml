@@ -5,8 +5,6 @@ metadata:
     operators.coreos.com/jaeger-product.openshift-operators: ""
   name: elasticsearch-operator
   namespace: openshift-operators-redhat
-  #annotations:
-  #argocd.argoproj.io/sync-wave: "2"
 spec:
   channel: stable
   installPlanApproval: Automatic

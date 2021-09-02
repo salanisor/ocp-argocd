@@ -3,9 +3,6 @@ kind: PersistentVolumeClaim
 metadata:
   name: image-registry-storage
   namespace: openshift-image-registry
-  # annotations:
-  #   argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
-  #   argocd.argoproj.io/sync-wave: "4"
 spec:
   accessModes:
   - ReadWriteOnce

@@ -1,9 +1,6 @@
 apiVersion: operators.coreos.com/v1alpha1
 kind: InstallPlan
 metadata:
-  annotations:
-    argocd.argoproj.io/sync-wave: "2"
-    argocd.argoproj.io/compare-options: IgnoreExtraneous
   generateName: install-
   labels:
     operators.coreos.com/servicemeshoperator.openshift-operators: ""
