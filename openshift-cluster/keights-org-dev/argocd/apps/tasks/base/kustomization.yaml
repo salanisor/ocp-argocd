@@ -11,7 +11,7 @@ resources:
   #- api-server-app.yaml
   #- ingress-controller-app.yaml
   #- proxy-app.yaml
-  - sealed-secrets-app.yaml
+  #- sealed-secrets-app.yaml
   - resource-locker-app.yaml
   #- machine-config-pools-app.yaml
   #- node-labels-app.yaml
