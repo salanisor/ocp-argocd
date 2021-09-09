@@ -3,6 +3,7 @@ kind: Kustomization
 
 resources:
   #- service-mesh-operator.yaml
+  - compliance-operator.yaml
   - service-mesh-app.yaml
   - jaeger-operator-app.yaml
   - kiali-operator-app.yaml
