@@ -15,7 +15,7 @@ resources:
   - sealed-secrets-app.yaml
   - resource-locker-app.yaml
   #- machine-config-pools-app.yaml
-  #- node-labels-app.yaml
+  - node-labels-app.yaml
   #- ocs-app.yaml
   - registry-app.yaml
   # - cnv-app.yaml

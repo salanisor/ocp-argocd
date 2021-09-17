@@ -13,9 +13,9 @@ spec:
     server: https://kubernetes.default.svc
   project: cluster-config
   source:
-    path: openshift-cluster/redcloud/node-labels/base
-    repoURL: https://github.com/ocpdude/ocp-argocd.git
-    targetRevision: main
+    path: openshift-cluster/keights-org-dev/node-labels/base
+    repoURL: https://github.com/salanisor/ocp-argocd.git
+    targetRevision: test
   syncPolicy:
     automated:
       prune: false
