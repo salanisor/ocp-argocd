@@ -17,7 +17,6 @@ spec:
     patchTemplate: |
       metadata:
         labels:
-          node-role.kubernetes.io/worker: ""
           node-role.kubernetes.io/infra: ""
     patchType: application/strategic-merge-patch+json
     id: worker2-node-labels
