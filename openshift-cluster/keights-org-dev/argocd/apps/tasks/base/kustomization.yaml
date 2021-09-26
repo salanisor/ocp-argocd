@@ -9,7 +9,7 @@ resources:
   - kiali-operator-app.yaml
   - elastic-operator-app.yaml
   - pipelines-operator-app.yaml
-  - openshift-monitoring.yaml
+  #- openshift-monitoring.yaml
   #- api-server-app.yaml
   #- ingress-controller-app.yaml
   #- proxy-app.yaml

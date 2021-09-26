@@ -6,12 +6,13 @@ metadata:
 data:
   config.yaml: |
     prometheusK8s:
+      retention: 48h
       volumeClaimTemplate:
         spec:
           storageClassName: nfs
           resources:
             requests:
-              storage: 2Gi
+              storage: 10Gi
     alertmanagerMain:
       volumeClaimTemplate:
         spec:
